@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title>
+    <style>
+        /* Body styling with pastel background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Light pink pastel */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling the container */
+        h2 {
+            color: #880e4f; /* Deep pink text */
+        }
+
+        p {
+            color: #6a1b9a; /* Purple text */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d1c4e9; /* Light pastel purple */
+            border: none;
+            border-radius: 4px;
+            color: #4a148c; /* Deep purple */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #b39ddb; /* Slightly darker pastel purple */
+        }
+    </style>
+</head>
+<body>
+    <h2>Number Validation</h2>
+    <p>Enter a number and check if it is lower or higher than 10:</p>
+    <input type="text" id="userInput" placeholder="Enter a number">
+    <button onclick="checkInput()">Check</button>
+
+    <script>
+        function checkInput() {
+            // Get the input value
+            const input = document.getElementById("userInput").value;
+
+            // Check if the input is a number
+            if (isNaN(input) || input.trim() === "") {
+                alert("Please insert a number!");
+            } else {
+                // Convert the input to a number
+                const number = Number(input);
+                if (number < 10) {
+                    alert("The number is lower than 10");
+                } else if (number > 10) {
+                    alert("The number is higher than 10");
+                } else {
+                    alert("The number is exactly 10");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
